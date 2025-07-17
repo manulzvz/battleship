@@ -1,6 +1,7 @@
 {
   "name": "battleship",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "directories": {
     "test": "tests"
@@ -9,7 +10,7 @@
     "test": "jest --verbose"
   },
   "repository": {
-    "type": "git",
+    "type": "module",
     "url": "git+https://github.com/manulzvz/battleship.git"
   },
   "keywords": [],
