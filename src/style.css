@@ -1,0 +1,169 @@
+/* Ajustes para que la interfaz de Battleship quepa en pantallas estándar sin scroll vertical excesivo,
+   manteniendo espacios en blanco y estética limpia */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e293b;
+  /* Elimina padding extra */
+  padding: 0;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 700px;
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 32px rgba(30, 41, 59, 0.08);
+  padding: 1.5rem 2.2rem 2rem 2.2rem; /* Aumenta el padding horizontal */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.ship-icon {
+display: inline-block;
+vertical-align: middle;
+margin-right: 0.6rem;
+}
+
+.boards-section {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.board-card {
+  background: #f8fafc;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(30, 41, 59, 0.07);
+  padding: 0.7rem 0.5rem 1rem 0.5rem;
+  min-width: 0;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board-card h2 {
+  color: #1e293b;
+  margin-bottom: 0.6rem;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 22px); /* Reduce tamaño de celda */
+  grid-template-rows: repeat(10, 22px);
+  gap: 1px;
+  margin-top: 4px;
+}
+
+.cell {
+  width: 22px;
+  height: 22px;
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #1e293b;
+}
+
+.cell.player {
+  background: #cbd5e1;
+}
+.cell.hit {
+  background: #ff7e7e;
+  color: #fff;
+}
+.cell.miss {
+  background: #94a3b8;
+  opacity: 0.7;
+}
+.cell.ship {
+  background: #1e293b;
+  color: #fff;
+}
+
+.info-panel {
+  margin: 10px 0 6px 0;
+  padding: 6px;
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  color: #1e293b;
+  font-weight: 500;
+  text-align: center;
+  min-height: 18px;
+  box-shadow: 0 1px 4px rgba(30, 41, 59, 0.07);
+  font-size: 0.95em;
+}
+
+#restart-btn {
+  background: #1e293b;
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 8px 22px;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(30, 41, 59, 0.12);
+  transition: background 0.2s;
+  font-family: inherit;
+  margin: 0 auto;
+  display: block;
+}
+#restart-btn:hover {
+  background: #334155;
+}
+
+.restart-icon {
+vertical-align: middle;
+margin-right: 0.5em;
+display: inline-block;
+}
+
+/* Responsive: En pantallas chicas apila los tableros y reduce el tamaño aún más */
+@media (max-width: 600px) {
+  .main-container {
+    max-width: 98vw;
+    padding: 0.7rem 0.5rem 1.2rem 0.5rem;
+  }
+  .boards-section {
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: center;
+  }
+  .board {
+    grid-template-columns: repeat(10, 15px);
+    grid-template-rows: repeat(10, 15px);
+  }
+  .cell {
+    width: 15px;
+    height: 15px;
+    font-size: 11px;
+  }
+  .board-card {
+    min-width: 0;
+    width: 100%;
+    padding: 0.5rem 0.2rem 0.6rem 0.2rem;
+  }
+}
