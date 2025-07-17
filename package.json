@@ -7,7 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest --verbose"
+    "test": "jest --verbose",
+    "build": "webpack",
+    "start": "webpack serve --open"
   },
   "repository": {
     "type": "module",
@@ -25,6 +27,11 @@
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
     "babel-jest": "^30.0.4",
-    "jest": "^30.0.4"
+    "css-loader": "^7.1.2",
+    "jest": "^30.0.4",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
   }
 }
