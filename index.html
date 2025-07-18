@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battleship - Simple Game</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap"
+      rel="stylesheet"
+    />
+  <script defer src="main.js"></script></head>
+  <body>
+    <div class="main-container">
+      <header>
+        <h1>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="ship-icon"
+            viewBox="0 0 32 32"
+            fill="none"
+            width="32"
+            height="32"
+          >
+            <g>
+              <path d="M16 3 L26 19 H6 Z" fill="#1e293b" />
+              <rect x="14.5" y="8" width="3" height="8" rx="1" fill="#64748b" />
+              <ellipse cx="16" cy="23" rx="10" ry="5" fill="#94a3b8" />
+              <ellipse cx="16" cy="25" rx="8" ry="3" fill="#e2e8f0" />
+            </g>
+          </svg>
+          Battleship
+        </h1>
+      </header>
+
+      <section class="boards-section">
+        <div class="board-card">
+          <h2>Tu Tablero</h2>
+
+          <div id="player-board" class="board"></div>
+        </div>
+
+        <div class="board-card">
+          <h2>Tablero Enemigo</h2>
+
+          <div id="computer-board" class="board"></div>
+        </div>
+      </section>
+
+      <div class="info-panel" id="game-messages"></div>
+
+      <button id="restart-btn">
+        <svg
+          class="restart-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="19"
+          height="19"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 8 8h-2a6 6 0 1 1-1.76-4.24l-2.79 2.79H20V4.41l-2.35 2.34z"
+            fill="#fff"
+          />
+        </svg>
+        Reiniciar juego
+      </button>
+    </div>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
