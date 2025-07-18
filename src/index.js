@@ -2,6 +2,7 @@ import Player from "./game/player.js";
 import Computer from "./game/computer.js";
 import Ship from "./game/ship.js";
 import renderBoard from "./ui/drawBoard.js";
+import { placeAllShipsRandomly } from "./game/shipPlacement.js";
 import {
   addEnemyBoardListeners,
   updateMessages,
@@ -17,9 +18,9 @@ function setupGame() {
   player = new Player("Manuel");
   computer = new Computer();
 
-  // Coloca los barcos (puedes mejorar esto más adelante)
-  player.gameboard.placeShip(0, 0, new Ship(3), "horizontal");
-  computer.gameboard.placeShip(2, 2, new Ship(2), "vertical");
+  // Coloca los 10 barcos en los tableros 
+  placeAllShipsRandomly(player.gameboard);
+  placeAllShipsRandomly(computer.gameboard);
 
   // Renderiza los tableros
   renderBoard(player.gameboard, "player-board", true);
